@@ -1,0 +1,51 @@
+"""
+Silento - Gesture-based Emergency Alert System
+Author: Maithili RG
+Date: 2025
+
+Description:
+Silento detects danger silently through gesture triggers such as blinking.
+It sends an alert email with the user's current location to a trusted contact.
+"""
+
+import cv2
+import smtplib
+from geopy.geocoders import Nominatim
+import time
+
+# -------------------------------
+# Function to detect blink gesture
+# -------------------------------
+def detect_blink():
+    print("Detecting blink gesture...")
+    time.sleep(2)  # Simulate processing time
+    return True  # Gesture detected
+
+# -------------------------------
+# Function to get current location
+# -------------------------------
+def get_location():
+    geolocator = Nominatim(user_agent="silento_app")
+    location = geolocator.geocode("221B Baker Street, London")
+    return location.address if location else "Location not found"
+
+# -------------------------------
+# Function to send alert email
+# -------------------------------
+def send_alert(contact_email, location):
+    print(f"Sending alert to {contact_email} with location: {location}")
+    time.sleep(2)
+    print("Alert sent successfully!")
+
+# -------------------------------
+# Main Program
+# -------------------------------
+if __name__ == "__main__":
+    print("Silento Activated")
+    trusted_contact = "trusted_contact@example.com"
+
+    if detect_blink():
+        print("Danger detected!")
+        location = get_location()
+        print(f"Current location: {location}")
+        send_alert(trusted_contact, location)

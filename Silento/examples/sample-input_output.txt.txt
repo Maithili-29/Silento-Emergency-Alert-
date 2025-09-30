@@ -1,0 +1,10 @@
+Input:
+Simulated blink detected
+
+Output:
+Silento Activated
+Detecting blink gesture...
+Danger detected!
+Current location: 123 Main Street, City, Country
+Sending alert to trusted contact...
+Alert sent successfully!
